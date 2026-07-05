@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery – My Website</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a class="site-logo" href="index.html">My Website</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Gallery Header -->
+    <div class="gallery-header">
+      <div class="container">
+        <h1>Image Gallery</h1>
+        <p>A collection of placeholder images. Click any photo to view it full size.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="container">
+      <div class="gallery-grid">
+
+        <div class="gallery-item" role="button" aria-label="View image 1">
+          <img src="https://picsum.photos/seed/rdv1/800/600" alt="Placeholder image 1"
+               data-full="https://picsum.photos/seed/rdv1/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 01</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 2">
+          <img src="https://picsum.photos/seed/rdv2/800/600" alt="Placeholder image 2"
+               data-full="https://picsum.photos/seed/rdv2/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 02</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 3">
+          <img src="https://picsum.photos/seed/rdv3/800/600" alt="Placeholder image 3"
+               data-full="https://picsum.photos/seed/rdv3/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 03</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 4">
+          <img src="https://picsum.photos/seed/rdv4/800/600" alt="Placeholder image 4"
+               data-full="https://picsum.photos/seed/rdv4/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 04</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 5">
+          <img src="https://picsum.photos/seed/rdv5/800/600" alt="Placeholder image 5"
+               data-full="https://picsum.photos/seed/rdv5/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 05</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 6">
+          <img src="https://picsum.photos/seed/rdv6/800/600" alt="Placeholder image 6"
+               data-full="https://picsum.photos/seed/rdv6/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 06</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 7">
+          <img src="https://picsum.photos/seed/rdv7/800/600" alt="Placeholder image 7"
+               data-full="https://picsum.photos/seed/rdv7/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 07</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 8">
+          <img src="https://picsum.photos/seed/rdv8/800/600" alt="Placeholder image 8"
+               data-full="https://picsum.photos/seed/rdv8/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 08</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 9">
+          <img src="https://picsum.photos/seed/rdv9/800/600" alt="Placeholder image 9"
+               data-full="https://picsum.photos/seed/rdv9/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 09</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 10">
+          <img src="https://picsum.photos/seed/rdv10/800/600" alt="Placeholder image 10"
+               data-full="https://picsum.photos/seed/rdv10/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 10</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 11">
+          <img src="https://picsum.photos/seed/rdv11/800/600" alt="Placeholder image 11"
+               data-full="https://picsum.photos/seed/rdv11/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 11</span></div>
+        </div>
+
+        <div class="gallery-item" role="button" aria-label="View image 12">
+          <img src="https://picsum.photos/seed/rdv12/800/600" alt="Placeholder image 12"
+               data-full="https://picsum.photos/seed/rdv12/1200/900" loading="lazy" />
+          <div class="overlay"><span class="overlay-label">Photo 12</span></div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-prev" aria-label="Previous image">&#8592;</button>
+      <button class="lightbox-next" aria-label="Next image">&#8594;</button>
+      <img class="lightbox-img" src="" alt="" />
+      <p class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 My Website &mdash; Built with plain HTML, CSS &amp; JS. Hosted on
+        <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
