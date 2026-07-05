@@ -1003,3 +1003,10 @@ footer a:hover { color: #ffffff; }
   color: var(--color-text-muted);
   margin-top: 0.75rem;
 }
+
+@media (max-width: 640px) {
+  .wheel-wrap,
+  .wheel-hint {
+    display: none;
+  }
+}
