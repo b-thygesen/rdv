@@ -540,8 +540,14 @@ nav a.active {
 /* Person cards (Om os) */
 .person-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+}
+
+@media (max-width: 640px) {
+  .person-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .person-card {
