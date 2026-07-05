@@ -1,4 +1,4 @@
-/* =============================================
+﻿/* =============================================
    CSS Custom Properties
    ============================================= */
 :root {
@@ -830,3 +830,24 @@ footer a {
 }
 
 footer a:hover { color: #ffffff; }
+
+/* Reference list */
+.reference-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.reference-list li + li { margin-top: 0.4rem; }
+
+/* History body section headings */
+.history-body h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.4rem;
+}
