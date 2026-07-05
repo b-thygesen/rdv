@@ -950,3 +950,42 @@ footer a:hover { color: #ffffff; }
   color: var(--color-text-muted);
   line-height: 1.45;
 }
+/* =============================================
+   Year Wheel
+   ============================================= */
+.wheel-wrap {
+  position: relative;
+  max-width: 420px;
+  margin: 1.5rem auto 0;
+}
+
+#year-wheel {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wheel-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  pointer-events: none;
+  white-space: nowrap;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.wheel-hint {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+}

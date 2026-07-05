@@ -144,6 +144,18 @@
       </div>
     </section>
 
+    <!-- Year Wheel -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Årshjul</h2>
+        <div class="wheel-wrap">
+          <svg id="year-wheel" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Årshjul med begivenheder"></svg>
+          <div id="wheel-tooltip" class="wheel-tooltip" hidden></div>
+        </div>
+        <p class="wheel-hint">Hold musen over en prik for at se begivenheden — klik for at læse mere.</p>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
@@ -154,5 +166,94 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+  (function () {
+    const svg = document.getElementById('year-wheel');
+    const tooltip = document.getElementById('wheel-tooltip');
+    if (!svg) return;
+
+    const cx = 200, cy = 200;
+    const outerR = 150, innerR = 52, dotR = 118;
+    const labelR = 168;
+    const months = ['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'];
+    const monthDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+    const segColors = ['#e8f0ea','#d4e3d6'];
+
+    const events = [
+      { month:4,  day:3,  title:'Udstilling på Tønnisgård', date:'3. april 2026',  href:'begivenhed-toennisgaard.html' },
+      { month:6,  day:21, title:'Mølledag',                  date:'21. juni 2026',  href:'begivenhed-moelledag.html' },
+      { month:7,  day:12, title:'Loppemarked',               date:'12. juli 2025',  href:'begivenhed-loppemarked.html', offset: -10 },
+      { month:7,  day:15, title:'Klægager',                  date:'15. juli 2026',  href:'begivenhed-klaegager.html',   offset: 10 },
+    ];
+
+    function rad(deg) { return deg * Math.PI / 180; }
+    function polar(r, deg) {
+      return { x: cx + r * Math.cos(rad(deg)), y: cy + r * Math.sin(rad(deg)) };
+    }
+    function arc(r1, r2, a1, a2) {
+      const s1 = polar(r1, a1), e1 = polar(r1, a2);
+      const s2 = polar(r2, a2), e2 = polar(r2, a1);
+      const lg = (a2 - a1 > 180) ? 1 : 0;
+      return `M${s1.x} ${s1.y} A${r1} ${r1} 0 ${lg} 1 ${e1.x} ${e1.y} L${s2.x} ${s2.y} A${r2} ${r2} 0 ${lg} 0 ${e2.x} ${e2.y}Z`;
+    }
+    function el(tag, attrs, ns='http://www.w3.org/2000/svg') {
+      const e = document.createElementNS(ns, tag);
+      Object.entries(attrs).forEach(([k,v]) => e.setAttribute(k, v));
+      return e;
+    }
+
+    // Month segments
+    months.forEach((name, i) => {
+      const a1 = -90 + i * 30, a2 = a1 + 30, mid = a1 + 15;
+      svg.appendChild(el('path', { d: arc(outerR, innerR, a1, a2), fill: segColors[i%2], stroke:'#fff', 'stroke-width':2 }));
+
+      const lp = polar(labelR, mid);
+      const t = el('text', { x:lp.x, y:lp.y, 'text-anchor':'middle', 'dominant-baseline':'middle',
+        'font-size':'11', 'font-weight':'600', fill:'#2d4a35', 'font-family':'Segoe UI,system-ui,sans-serif',
+        transform:`rotate(${mid+90},${lp.x},${lp.y})` });
+      t.textContent = name;
+      svg.appendChild(t);
+    });
+
+    // Center ring + text
+    svg.appendChild(el('circle', { cx, cy, r: innerR, fill:'#fff', stroke:'#d4e3d6', 'stroke-width':2 }));
+    const ct = el('text', { x:cx, y:cy, 'text-anchor':'middle', 'dominant-baseline':'middle',
+      'font-size':'10', 'font-weight':'700', fill:'#2d4a35', 'font-family':'Segoe UI,system-ui,sans-serif' });
+    ct.textContent = 'Begivenheder';
+    svg.appendChild(ct);
+
+    // Event dots
+    events.forEach(ev => {
+      const frac = (ev.day - 1) / monthDays[ev.month - 1];
+      const baseDeg = -90 + (ev.month - 1) * 30 + frac * 30;
+      const finalDeg = baseDeg + (ev.offset || 0);
+      const pos = polar(dotR, finalDeg);
+
+      const g = el('g', { style:'cursor:pointer', tabindex:'0', role:'button', 'aria-label':ev.title });
+
+      const glow = el('circle', { cx:pos.x, cy:pos.y, r:11, fill:'rgba(74,144,217,0.18)' });
+      const dot  = el('circle', { cx:pos.x, cy:pos.y, r:7,  fill:'#4a90d9', stroke:'#fff', 'stroke-width':2 });
+
+      g.appendChild(glow);
+      g.appendChild(dot);
+
+      // Tooltip
+      function showTip(e) {
+        tooltip.innerHTML = `<strong>${ev.title}</strong><br><span>${ev.date}</span>`;
+        tooltip.hidden = false;
+      }
+      function hideTip() { tooltip.hidden = true; }
+
+      g.addEventListener('mouseenter', showTip);
+      g.addEventListener('focus',      showTip);
+      g.addEventListener('mouseleave', hideTip);
+      g.addEventListener('blur',       hideTip);
+      g.addEventListener('click',      () => window.location.href = ev.href);
+      g.addEventListener('keydown',    e => { if (e.key==='Enter') window.location.href = ev.href; });
+
+      svg.appendChild(g);
+    });
+  })();
+  </script>
 </body>
 </html>
