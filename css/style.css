@@ -261,6 +261,10 @@ nav a.active {
   font-size: 1.05rem;
 }
 
+.section-body p + p {
+  margin-top: 1rem;
+}
+
 /* Cards row */
 .cards {
   display: grid;
