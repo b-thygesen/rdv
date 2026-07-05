@@ -158,10 +158,10 @@
     ];
 
     const events = [
-      { month:4,  day:3,  title:'Udstilling på Tønnisgård', subtitle:'Fremvisning af Rømødragter og kirkedragter på Naturcenteret Tønnisgård.', date:'3. april 2026',  href:'begivenhed-toennisgaard.html' },
-      { month:6,  day:21, title:'Mølledag',                  subtitle:'National Mølledag på Fanø ved Sønderho Mølle.',                            date:'21. juni 2026',  href:'begivenhed-moelledag.html' },
+      { month:4,  day:3,  title:'Udstilling på Tønnisgård', subtitle:'Fremvisning af Rømødragter og kirkedragter på Naturcenteret Tønnisgård.', date:'3. april 2026',  href:'begivenhed-toennisgaard.html', img:'Billeder/rømø/logo.jpg' },
+      { month:6,  day:21, title:'Mølledag',                  subtitle:'National Mølledag på Fanø ved Sønderho Mølle.',                            date:'21. juni 2026',  href:'begivenhed-moelledag.html',    img:'Billeder/rømø/mølledag.jpg' },
       { month:7,  day:12, title:'Fanødag',                   subtitle:'Morgenkaffe, kirke, sømandens ankomst og dragtfremvisning på Fanø.',        date:'12. juli 2026',  href:'begivenhed-fanoedag.html',    offset: -9 },
-      { month:7,  day:15, title:'Klægager',                  subtitle:'Onsdagsmenu med besøg af Rømødragtens Venner på Den Gamle Digegreves Gård.',date:'15. juli 2026',  href:'begivenhed-klaegager.html',   offset: 9 },
+      { month:7,  day:15, title:'Klægager',                  subtitle:'Onsdagsmenu med besøg af Rømødragtens Venner på Den Gamle Digegreves Gård.',date:'15. juli 2026',  href:'begivenhed-klaegager.html',   offset: 9, img:'Billeder/rømø/klægager.webp' },
     ];
 
     function rad(deg) { return deg * Math.PI / 180; }
@@ -200,7 +200,7 @@
     svg.appendChild(ct);
 
     // Event dots
-    events.forEach(ev => {
+    events.forEach((ev, i) => {
       const frac = (ev.day - 1) / monthDays[ev.month - 1];
       const baseDeg = -90 + (ev.month - 1) * 30 + frac * 30;
       const finalDeg = baseDeg + (ev.offset || 0);
@@ -208,11 +208,25 @@
 
       const g = el('g', { style:'cursor:pointer', tabindex:'0', role:'button', 'aria-label':ev.title });
 
-      const glow = el('circle', { cx:pos.x, cy:pos.y, r:11, fill:'rgba(74,144,217,0.18)' });
-      const dot  = el('circle', { cx:pos.x, cy:pos.y, r:7,  fill:'#4a90d9', stroke:'#fff', 'stroke-width':2 });
-
+      const imgR = 14;
+      const glow = el('circle', { cx:pos.x, cy:pos.y, r:imgR + 4, fill:'rgba(74,144,217,0.18)' });
       g.appendChild(glow);
-      g.appendChild(dot);
+
+      if (ev.img) {
+        const clipId = `clip-ev-${i}`;
+        const defs = svg.querySelector('defs') || svg.insertBefore(el('defs', {}), svg.firstChild);
+        const cp = el('clipPath', { id: clipId });
+        cp.appendChild(el('circle', { cx: pos.x, cy: pos.y, r: imgR }));
+        defs.appendChild(cp);
+
+        const imgEl = el('image', { href: ev.img, x: pos.x - imgR, y: pos.y - imgR,
+          width: imgR * 2, height: imgR * 2, 'clip-path': `url(#${clipId})`,
+          preserveAspectRatio: 'xMidYMid slice' });
+        g.appendChild(imgEl);
+        g.appendChild(el('circle', { cx:pos.x, cy:pos.y, r:imgR, fill:'none', stroke:'#fff', 'stroke-width':2 }));
+      } else {
+        g.appendChild(el('circle', { cx:pos.x, cy:pos.y, r:7, fill:'#4a90d9', stroke:'#fff', 'stroke-width':2 }));
+      }
 
       // Tooltip
       function showTip(e) {
