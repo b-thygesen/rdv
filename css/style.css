@@ -1064,8 +1064,7 @@ footer a:hover { color: #ffffff; }
 }
 
 @media (max-width: 640px) {
-  .wheel-wrap,
-  .wheel-hint {
+  .wheel-section {
     display: none;
   }
 }
