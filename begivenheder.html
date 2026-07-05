@@ -271,10 +271,16 @@
       function showTip(e) {
         tooltip.innerHTML = `<strong>${ev.title}</strong><br><span>${ev.date}</span>`;
         tooltip.hidden = false;
+        moveTip(e);
+      }
+      function moveTip(e) {
+        tooltip.style.left = e.clientX + 'px';
+        tooltip.style.top  = e.clientY + 'px';
       }
       function hideTip() { tooltip.hidden = true; }
 
       g.addEventListener('mouseenter', showTip);
+      g.addEventListener('mousemove',  moveTip);
       g.addEventListener('focus',      showTip);
       g.addEventListener('mouseleave', hideTip);
       g.addEventListener('blur',       hideTip);
