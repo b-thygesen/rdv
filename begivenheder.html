@@ -195,7 +195,20 @@
     const labelR = 168;
     const months = ['Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'];
     const monthDays = [31,28,31,30,31,30,31,31,30,31,30,31];
-    const segColors = ['#e8f0ea','#d4e3d6'];
+    const segColors = [
+      '#daeaf7', // Jan - winter
+      '#daeaf7', // Feb - winter
+      '#d4edda', // Mar - spring
+      '#d4edda', // Apr - spring
+      '#d4edda', // May - spring
+      '#fff0b3', // Jun - summer
+      '#fff0b3', // Jul - summer
+      '#fff0b3', // Aug - summer
+      '#fde5c4', // Sep - fall
+      '#fde5c4', // Oct - fall
+      '#fde5c4', // Nov - fall
+      '#daeaf7', // Dec - winter
+    ];
 
     const events = [
       { month:4,  day:3,  title:'Udstilling på Tønnisgård', date:'3. april 2026',  href:'begivenhed-toennisgaard.html' },
@@ -223,7 +236,7 @@
     // Month segments
     months.forEach((name, i) => {
       const a1 = -90 + i * 30, a2 = a1 + 30, mid = a1 + 15;
-      svg.appendChild(el('path', { d: arc(outerR, innerR, a1, a2), fill: segColors[i%2], stroke:'#fff', 'stroke-width':2 }));
+      svg.appendChild(el('path', { d: arc(outerR, innerR, a1, a2), fill: segColors[i], stroke:'#fff', 'stroke-width':2 }));
 
       const lp = polar(labelR, mid);
       const t = el('text', { x:lp.x, y:lp.y, 'text-anchor':'middle', 'dominant-baseline':'middle',
