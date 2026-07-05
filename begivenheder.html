@@ -187,8 +187,7 @@
 
       const lp = polar(labelR, mid);
       const t = el('text', { x:lp.x, y:lp.y, 'text-anchor':'middle', 'dominant-baseline':'middle',
-        'font-size':'11', 'font-weight':'600', fill:'#2d4a35', 'font-family':'Segoe UI,system-ui,sans-serif',
-        transform:`rotate(${mid+90},${lp.x},${lp.y})` });
+        'font-size':'11', 'font-weight':'600', fill:'#2d4a35', 'font-family':'Segoe UI,system-ui,sans-serif' });
       t.textContent = name;
       svg.appendChild(t);
     });
