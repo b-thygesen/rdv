@@ -569,6 +569,32 @@ nav a.active {
   color: var(--color-text-muted);
 }
 
+/* Useful links list (Om os) */
+.link-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.link-list a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  transition: color var(--transition);
+}
+
+.link-list a:hover { color: var(--color-accent-dark); }
+
+.link-list .link-tbd {
+  color: var(--color-text-muted);
+  border-bottom-color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
 
 .media-block {
   display: grid;
