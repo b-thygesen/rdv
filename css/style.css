@@ -539,23 +539,26 @@ nav a.active {
 
 /* Person cards (Om os) */
 .person-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }
 
-@media (max-width: 640px) {
-  .person-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .person-card {
+  flex: 0 1 calc(33.333% - 1.5rem);
+  min-width: 200px;
   text-align: center;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--color-bg);
+}
+
+@media (max-width: 640px) {
+  .person-card {
+    flex: 1 1 100%;
+  }
 }
 
 .person-photo {
