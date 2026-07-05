@@ -656,7 +656,7 @@ nav a.active {
 }
 
 .article-header {
-  max-width: 740px;
+  max-width: 980px;
   margin-bottom: 2rem;
 }
 
@@ -684,7 +684,7 @@ nav a.active {
 
 .article-image {
   width: 100%;
-  max-width: 740px;
+  max-width: 980px;
   height: auto;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
@@ -692,7 +692,7 @@ nav a.active {
 }
 
 .article-body {
-  max-width: 740px;
+  max-width: 980px;
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--color-text);
