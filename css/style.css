@@ -955,7 +955,7 @@ footer a:hover { color: #ffffff; }
    ============================================= */
 .wheel-wrap {
   position: relative;
-  max-width: 420px;
+  max-width: 100%;
   margin: 1.5rem auto 0;
 }
 
