@@ -9,6 +9,8 @@
   --color-text-muted: #666666;
   --color-accent: #4a90d9;
   --color-accent-dark: #357abd;
+  --color-nav-bg: #2d4a35;
+  --color-nav-text: #e8f0ea;
   --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --radius: 6px;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -71,8 +73,8 @@ main {
    Header & Navigation
    ============================================= */
 header {
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-nav-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -89,12 +91,12 @@ header {
 .site-logo {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-nav-text);
   letter-spacing: -0.02em;
 }
 
 .site-logo:hover {
-  color: var(--color-accent);
+  color: #ffffff;
 }
 
 nav ul {
@@ -106,7 +108,7 @@ nav ul {
 nav a {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: rgba(232, 240, 234, 0.8);
   transition: color var(--transition);
   padding: 0.25rem 0;
   border-bottom: 2px solid transparent;
@@ -114,8 +116,8 @@ nav a {
 
 nav a:hover,
 nav a.active {
-  color: var(--color-accent);
-  border-bottom-color: var(--color-accent);
+  color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 
 /* Hamburger */
@@ -133,7 +135,7 @@ nav a.active {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--color-text);
+  background: var(--color-nav-text);
   transition: var(--transition);
   border-radius: 2px;
 }
@@ -151,8 +153,8 @@ nav a.active {
     top: 64px;
     left: 0;
     right: 0;
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
+    background: var(--color-nav-bg);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
     padding: 1rem 1.5rem;
   }
 
@@ -498,17 +500,17 @@ nav a.active {
 
 
 footer {
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  background: var(--color-nav-bg);
+  border-top: 1px solid rgba(0,0,0,0.2);
   padding: 2rem 0;
   text-align: center;
-  color: var(--color-text-muted);
+  color: rgba(232, 240, 234, 0.75);
   font-size: 0.9rem;
 }
 
 footer a {
-  color: var(--color-text-muted);
+  color: rgba(232, 240, 234, 0.75);
   text-decoration: underline;
 }
 
-footer a:hover { color: var(--color-accent); }
+footer a:hover { color: #ffffff; }
