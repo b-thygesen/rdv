@@ -637,7 +637,119 @@ nav a.active {
 }
 
 
-footer {
+/* =============================================
+   Article page
+   ============================================= */
+.article-page {
+  padding: 3rem 0 5rem;
+}
+
+.article-header {
+  max-width: 740px;
+  margin-bottom: 2rem;
+}
+
+.article-date {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.article-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.article-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.article-image {
+  width: 100%;
+  max-width: 740px;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  margin-bottom: 2rem;
+}
+
+.article-body {
+  max-width: 740px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+.article-body p + p {
+  margin-top: 1.25rem;
+}
+
+.article-notice {
+  margin-top: 1.5rem;
+  background: var(--color-surface);
+  border-left: 3px solid var(--color-accent);
+  padding: 0.85rem 1.1rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+/* =============================================
+   News list (Nyheder page)
+   ============================================= */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  max-width: 740px;
+}
+
+.news-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  color: var(--color-text);
+}
+
+.news-card-meta {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.news-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.news-card-excerpt {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+/* =============================================
+   Footer
+   ============================================= */
   background: var(--color-nav-bg);
   border-top: 1px solid rgba(0,0,0,0.2);
   padding: 2rem 0;
