@@ -991,7 +991,8 @@ footer a:hover { color: #ffffff; }
   text-align: center;
   box-shadow: var(--shadow);
   pointer-events: none;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 220px;
   color: var(--color-text);
   line-height: 1.4;
   transform: translate(-50%, calc(-100% - 12px));
