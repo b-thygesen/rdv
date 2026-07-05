@@ -193,12 +193,8 @@
       svg.appendChild(t);
     });
 
-    // Center ring + text
+    // Center ring
     svg.appendChild(el('circle', { cx, cy, r: innerR, fill:'#fff', stroke:'#d4e3d6', 'stroke-width':2 }));
-    const ct = el('text', { x:cx, y:cy, 'text-anchor':'middle', 'dominant-baseline':'middle',
-      'font-size':'10', 'font-weight':'700', fill:'#2d4a35', 'font-family':'Segoe UI,system-ui,sans-serif' });
-    ct.textContent = 'Begivenheder';
-    svg.appendChild(ct);
 
     // Event dots
     events.forEach((ev, i) => {
