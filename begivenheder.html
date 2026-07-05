@@ -51,6 +51,15 @@
             </div>
           </a>
 
+          <a href="begivenhed-fanoedag.html" class="news-card">
+            <div class="news-card-body" style="padding: 1.25rem;">
+              <div class="news-card-meta">12. juli 2026</div>
+              <h2 class="news-card-title">Fanødag</h2>
+              <p class="news-card-excerpt">Deltag i en dag med levende kulturarv på Fanø — morgenkaffe, kirke, sømandens ankomst og dragtfremvisning.</p>
+              <span class="text-link">Læs mere →</span>
+            </div>
+          </a>
+
           <a href="begivenhed-moelledag.html" class="news-card">
             <div class="news-card-image">
               <img src="Billeder/rømø/mølledag.jpg" alt="Mølledag" loading="lazy" />
@@ -107,6 +116,15 @@
             <a href="begivenhed-klaegager.html" class="timeline-card">
               <h3>Aften med Rømødragter på Klægager</h3>
               <p>Onsdagsmenu med besøg af Rømødragtens Venner på Den Gamle Digegreves Gård.</p>
+            </a>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">12. juli</div>
+            <a href="begivenhed-fanoedag.html" class="timeline-card">
+              <h3>Fanødag</h3>
+              <p>Morgenkaffe, kirke, sømandens ankomst og dragtfremvisning på Fanø.</p>
             </a>
           </div>
 
@@ -182,8 +200,9 @@
     const events = [
       { month:4,  day:3,  title:'Udstilling på Tønnisgård', date:'3. april 2026',  href:'begivenhed-toennisgaard.html' },
       { month:6,  day:21, title:'Mølledag',                  date:'21. juni 2026',  href:'begivenhed-moelledag.html' },
-      { month:7,  day:12, title:'Loppemarked',               date:'12. juli 2025',  href:'begivenhed-loppemarked.html', offset: -10 },
-      { month:7,  day:15, title:'Klægager',                  date:'15. juli 2026',  href:'begivenhed-klaegager.html',   offset: 10 },
+      { month:7,  day:12, title:'Loppemarked',               date:'12. juli 2025',  href:'begivenhed-loppemarked.html', offset: -18 },
+      { month:7,  day:12, title:'Fanødag',                   date:'12. juli 2026',  href:'begivenhed-fanoedag.html',    offset: 0 },
+      { month:7,  day:15, title:'Klægager',                  date:'15. juli 2026',  href:'begivenhed-klaegager.html',   offset: 18 },
     ];
 
     function rad(deg) { return deg * Math.PI / 180; }
