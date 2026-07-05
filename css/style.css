@@ -257,7 +257,6 @@ nav a.active {
 
 .section-body {
   color: var(--color-text-muted);
-  max-width: 680px;
   font-size: 1.05rem;
 }
 
