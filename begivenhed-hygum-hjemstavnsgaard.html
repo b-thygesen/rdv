@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hygum hjemstavnsgård – Rømø dragtens venner</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/aos.css" />
 </head>
 <body>
 
@@ -43,7 +44,7 @@
           <h1 class="article-title">Hygum hjemstavnsgård</h1>
         </div>
 
-        <div class="article-layout">
+        <div class="article-layout" data-aos="fade-up">
           <div class="article-body">
             <p>Lidt stemningsfoto fra en dejlig varm eftermiddag på Hygum hjemstavnsgård. Det må prøves igen en anden gang.</p>
             <p>Tak til alle der deltog og for at medbringe et godt humør. 😄</p>
@@ -67,5 +68,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/aos.js"></script>
+  <script>AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
 </body>
 </html>

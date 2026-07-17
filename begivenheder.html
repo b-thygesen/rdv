@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Begivenheder – Rømø dragtens venner</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/aos.css" />
 </head>
 <body>
 
@@ -48,14 +49,14 @@
     <!-- Timeline -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Årskalender</h2>
+        <h2 class="section-title" data-aos="fade-up">Årskalender</h2>
 
         <div class="timeline">
 
           <!-- 2026 -->
-          <div class="timeline-year">2026</div>
+          <div class="timeline-year" data-aos="fade-up">2026</div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-aos="fade-left" data-aos-delay="0">
             <div class="timeline-dot"></div>
             <div class="timeline-date">21. juli</div>
             <a href="begivenhed-uhrbrand-holst-soegaard.html" class="timeline-card">
@@ -67,7 +68,7 @@
             </a>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-aos="fade-left" data-aos-delay="0">
             <div class="timeline-dot"></div>
             <div class="timeline-date">15. juli</div>
             <a href="begivenhed-klaegager.html" class="timeline-card">
@@ -79,7 +80,7 @@
             </a>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-aos="fade-left" data-aos-delay="0">
             <div class="timeline-dot"></div>
             <div class="timeline-date">12. juli</div>
             <a href="begivenhed-fanoedag.html" class="timeline-card">
@@ -91,7 +92,7 @@
             </a>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-aos="fade-left" data-aos-delay="0">
             <div class="timeline-dot"></div>
             <div class="timeline-date">28. juni</div>
             <a href="begivenhed-hygum-hjemstavnsgaard.html" class="timeline-card">
@@ -103,7 +104,7 @@
             </a>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-aos="fade-left" data-aos-delay="0">
             <div class="timeline-dot"></div>
             <div class="timeline-date">21. juni</div>
             <a href="begivenhed-moelledag.html" class="timeline-card">
@@ -115,7 +116,7 @@
             </a>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-aos="fade-left" data-aos-delay="0">
             <div class="timeline-dot"></div>
             <div class="timeline-date">3. april</div>
             <a href="begivenhed-toennisgaard.html" class="timeline-card">
@@ -128,9 +129,9 @@
           </div>
 
           <!-- 2025 -->
-          <div class="timeline-year">2025</div>
+          <div class="timeline-year" data-aos="fade-up">2025</div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-aos="fade-left" data-aos-delay="0">
             <div class="timeline-dot"></div>
             <div class="timeline-date">12. juli</div>
             <a href="begivenhed-loppemarked.html" class="timeline-card">
@@ -156,6 +157,8 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/aos.js"></script>
+  <script>AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
   <script>
   (function () {
     const svg = document.getElementById('year-wheel');

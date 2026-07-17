@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rømø dragtens venner</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/aos.css" />
 </head>
 <body>
 
@@ -50,8 +51,8 @@
     <!-- Om os -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Om os</h2>
-        <div class="section-body">
+        <h2 class="section-title" data-aos="fade-up">Om os</h2>
+        <div class="section-body" data-aos="fade-up" data-aos-delay="100">
           <p>Rømø dragtens venner er stiftet den 22. februar 2024. Vi er en frivillig forening, der er dedikeret til at formidle og fremme kendskabet til og bevarelsen af dragter med oprindelse fra Rømø. Vi deltager i relevante begivenheder og arrangementer og du er meget velkommen til at deltage i din egen dragt eller leje en dragt igennem foreningen. Vi har dame, herrer og børnedragter til udlejning.</p>
           <p>Vi er et fællesskab for alle, der er interesserede i rømødragter og vores mål er at bevare vores kulturarv og skabe et rum, hvor folk kan dele deres passion for rømødragter og lære mere om deres betydning og historie samt bevare det traditionelle håndværk.</p>
           <p>Bliv aktiv- eller støttemedlem for 100,- kr. pr. år. Kontakt bestyrelsen på mail <a href="mailto:foreningenrdv@gmail.com">foreningenrdv@gmail.com</a></p>
@@ -63,10 +64,10 @@
     <section class="section">
       <div class="container">
         <div class="media-block">
-          <div class="media-image">
+          <div class="media-image" data-aos="fade-right">
             <img src="Billeder/rømø/logo.jpg" alt="Rømø dragtens venner logo" />
           </div>
-          <div class="media-body">
+          <div class="media-body" data-aos="fade-left" data-aos-delay="100">
             <h2 class="section-title">Rømø dragtens historie</h2>
             <p>Det er meget begrænset, hvad vi ved om Rømødragterne fra slutningen af 1700-tallet, hvor de var en del af den daglige klædedragt. Der er ikke skrevet noget ned om det, men heldigvis er der bevaret nogle dragter og dragtdele både på museer og i privateje…</p>
             <a href="roemo-dragtens-historie.html" class="text-link">Læs mere →</a>
@@ -78,10 +79,10 @@
     <!-- Latest news -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Seneste nyheder</h2>
+        <h2 class="section-title" data-aos="fade-up">Seneste nyheder</h2>
         <div class="news-list">
 
-          <a href="artikel-klaegager-2026.html" class="news-card">
+          <a href="artikel-klaegager-2026.html" class="news-card" data-aos="fade-up" data-aos-delay="0">
             <div class="news-card-image">
               <img src="Billeder/rømø/Klægager 2026/75250e65-30b3-4ad8-816e-45b7097aea38.jpg"
                    alt="Klægager 2026" loading="lazy" />
@@ -94,7 +95,7 @@
             </div>
           </a>
 
-          <a href="artikel-fannikedag-2026.html" class="news-card">
+          <a href="artikel-fannikedag-2026.html" class="news-card" data-aos="fade-up" data-aos-delay="100">
             <div class="news-card-image">
               <img src="Billeder/rømø/Fannikedag 2026/958dee8e-5da3-4b46-a648-f21d67587c41.jpg"
                    alt="Fannike dag 2026" loading="lazy" />
@@ -114,24 +115,24 @@
     <!-- Quick links -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Se mere</h2>
+        <h2 class="section-title" data-aos="fade-up">Se mere</h2>
         <div class="quicklinks">
 
-          <a href="begivenheder.html" class="quicklink-card">
+          <a href="begivenheder.html" class="quicklink-card" data-aos="fade-up" data-aos-delay="0">
             <span class="quicklink-icon">📅</span>
             <h3>Begivenheder</h3>
             <p>Se kommende arrangementer og årskalender</p>
             <span class="text-link">Gå til begivenheder →</span>
           </a>
 
-          <a href="gallery.html" class="quicklink-card">
+          <a href="gallery.html" class="quicklink-card" data-aos="fade-up" data-aos-delay="100">
             <span class="quicklink-icon">🖼️</span>
             <h3>Galleri</h3>
             <p>Billeder fra vores arrangementer og aktiviteter</p>
             <span class="text-link">Se galleriet →</span>
           </a>
 
-          <a href="nyheder.html" class="quicklink-card">
+          <a href="nyheder.html" class="quicklink-card" data-aos="fade-up" data-aos-delay="200">
             <span class="quicklink-icon">📰</span>
             <h3>Nyheder</h3>
             <p>Læs de seneste nyheder fra foreningen</p>
@@ -152,5 +153,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/aos.js"></script>
+  <script>AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
 </body>
 </html>

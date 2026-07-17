@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loppemarked – Rømø dragtens venner</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/aos.css" />
 </head>
 <body>
 
@@ -38,7 +39,7 @@
 
         <a href="begivenheder.html" class="back-link">← Tilbage til begivenheder</a>
 
-        <div class="article-layout">
+        <div class="article-layout" data-aos="fade-up">
 
           <div class="article-text">
             <div class="article-header">
@@ -70,5 +71,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/aos.js"></script>
+  <script>AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
 </body>
 </html>

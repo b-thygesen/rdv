@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nyheder – Rømø dragtens venner</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/aos.css" />
 </head>
 <body>
 
@@ -35,11 +36,11 @@
 
     <section class="section">
       <div class="container">
-        <h1 class="section-title">Nyheder</h1>
+        <h1 class="section-title" data-aos="fade-up">Nyheder</h1>
 
         <div class="news-list">
 
-          <a href="artikel-klaegager-2026.html" class="news-card">
+          <a href="artikel-klaegager-2026.html" class="news-card" data-aos="fade-up" data-aos-delay="0">
             <div class="news-card-image">
               <img src="Billeder/rømø/Klægager 2026/75250e65-30b3-4ad8-816e-45b7097aea38.jpg"
                    alt="Klægager 2026" loading="lazy" />
@@ -52,7 +53,7 @@
             </div>
           </a>
 
-          <a href="artikel-fannikedag-2026.html" class="news-card">
+          <a href="artikel-fannikedag-2026.html" class="news-card" data-aos="fade-up" data-aos-delay="100">
             <div class="news-card-image">
               <img src="Billeder/rømø/Fannikedag 2026/958dee8e-5da3-4b46-a648-f21d67587c41.jpg"
                    alt="Fannike dag 2026" loading="lazy" />
@@ -65,7 +66,7 @@
             </div>
           </a>
 
-          <a href="artikel-en-kjole-er-vendt-hjem.html" class="news-card">
+          <a href="artikel-en-kjole-er-vendt-hjem.html" class="news-card" data-aos="fade-up" data-aos-delay="200">
             <div class="news-card-image">
               <img src="Billeder/rømø/Langfredag/4e53f1e6-9fad-458a-87a4-c07fc9cfb8c2.jpg"
                    alt="En kjole er vendt hjem" loading="lazy" />
@@ -92,5 +93,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/aos.js"></script>
+  <script>AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
 </body>
 </html>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fanødag – Rømø dragtens venner</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/aos.css" />
 </head>
 <body>
 
@@ -43,7 +44,7 @@
           <h1 class="article-title">Fanødag</h1>
         </div>
 
-        <div class="article-layout">
+        <div class="article-layout" data-aos="fade-up">
           <div class="article-body">
             <p>Har du ingen dragt, er der mulighed for at leje en dragt hos Foreningen Rømø dragtens venner. Kontakt bestyrelsesmedlem Lars, hvis du er interesseret.</p>
             <p>Vi påtænker at være på øen kl. 10 til morgenkaffe og sang/musik. Derefter går vi til kirken og deltager her, slutter med sømandens ankomst og dragtfremvisning, så lidt go' mad og hjem.</p>
@@ -69,5 +70,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/aos.js"></script>
+  <script>AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
 </body>
 </html>
