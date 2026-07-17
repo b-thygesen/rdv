@@ -1228,6 +1228,16 @@ footer a:hover { color: #ffffff; }
   width: 100%;
   height: auto;
   display: block;
+  transform-origin: center center;
+}
+
+#year-wheel.wheel-spin {
+  animation: wheel-spin-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes wheel-spin-in {
+  from { transform: rotate(-360deg); opacity: 0; }
+  to   { transform: rotate(0deg);    opacity: 1; }
 }
 
 .wheel-tooltip {

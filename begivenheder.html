@@ -173,6 +173,21 @@
   <script>AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true, offset: 60 });</script>
   <script>
   (function () {
+    const wheel = document.getElementById('year-wheel');
+    if (!wheel) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          wheel.classList.add('wheel-spin');
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(wheel);
+  })();
+  </script>
+  <script>
+  (function () {
     const svg = document.getElementById('year-wheel');
     const tooltip = document.getElementById('wheel-tooltip');
     if (!svg) return;
