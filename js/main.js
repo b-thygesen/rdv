@@ -1,4 +1,18 @@
 /* =============================================
+   Header — transparent on hero pages, solid on scroll
+   ============================================= */
+(function () {
+  const header = document.querySelector('header');
+  if (!header || !document.querySelector('.hero')) return;
+
+  header.classList.add('header-transparent');
+
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('header-transparent', window.scrollY < 20);
+  }, { passive: true });
+})();
+
+/* =============================================
    Navigation — mobile hamburger toggle
    ============================================= */
 (function () {
