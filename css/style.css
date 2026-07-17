@@ -1232,13 +1232,13 @@ footer a:hover { color: #ffffff; }
 }
 
 #year-wheel.wheel-spin {
-  animation: wheel-spin-in 5s linear forwards;
+  animation: wheel-spin-in 8s linear forwards;
 }
 
 @keyframes wheel-spin-in {
   0%   { transform: rotate(-540deg); opacity: 0; }
   10%  { opacity: 1; }
-  80%  { transform: rotate(-54deg);  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+  80%  { transform: rotate(-108deg); animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
   100% { transform: rotate(0deg); }
 }
 
