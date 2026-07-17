@@ -41,6 +41,7 @@
         <div class="wheel-wrap">
           <svg id="year-wheel" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Årshjul med begivenheder"></svg>
           <div id="wheel-tooltip" class="wheel-tooltip" hidden></div>
+          <button id="wheel-stop-btn" class="wheel-stop-overlay" aria-label="Stop årshjulet">Klik her for at stoppe årshjulet</button>
         </div>
         <p class="wheel-hint">Hold musen over en prik for at se begivenheden — klik for at læse mere.</p>
       </div>
@@ -174,16 +175,25 @@
   <script>
   (function () {
     const wheel = document.getElementById('year-wheel');
+    const stopBtn = document.getElementById('wheel-stop-btn');
     if (!wheel) return;
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          wheel.classList.add('wheel-spin');
+          wheel.classList.add('wheel-spinning');
           observer.disconnect();
         }
       });
     }, { threshold: 0.3 });
     observer.observe(wheel);
+
+    if (stopBtn) {
+      stopBtn.addEventListener('click', () => {
+        wheel.classList.remove('wheel-spinning');
+        stopBtn.classList.add('hidden');
+      });
+    }
   })();
   </script>
   <script>

@@ -1231,15 +1231,40 @@ footer a:hover { color: #ffffff; }
   transform-origin: center center;
 }
 
-#year-wheel.wheel-spin {
-  animation: wheel-spin-in 8s linear forwards;
+#year-wheel.wheel-spinning {
+  animation: wheel-spin-infinite 18s linear infinite;
 }
 
-@keyframes wheel-spin-in {
-  0%   { transform: rotate(-540deg); opacity: 0; }
-  10%  { opacity: 1; }
-  80%  { transform: rotate(-108deg); animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
-  100% { transform: rotate(0deg); }
+@keyframes wheel-spin-infinite {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.wheel-stop-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  letter-spacing: 0.03em;
+  transition: color var(--transition);
+}
+
+.wheel-stop-overlay:hover {
+  color: var(--color-accent);
+}
+
+.wheel-stop-overlay.hidden {
+  display: none;
 }
 
 .wheel-tooltip {
