@@ -734,6 +734,63 @@ nav a.active {
   cursor: not-allowed;
 }
 
+/* Link cards (Nyttige links) */
+.link-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  max-width: 480px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.link-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.link-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-nav-bg);
+  flex-shrink: 0;
+}
+
+.link-card-label {
+  flex: 1;
+  font-weight: 500;
+  font-size: 0.975rem;
+}
+
+.link-card-arrow {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: color var(--transition);
+}
+
+.link-card:hover .link-card-arrow {
+  color: var(--color-accent);
+}
+
 /* =============================================
    Quick Links
    ============================================= */
