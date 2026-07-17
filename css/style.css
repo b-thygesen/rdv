@@ -377,6 +377,32 @@ nav a.active {
   font-weight: 500;
 }
 
+.gallery-item--video .overlay {
+  opacity: 1;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item--video .overlay-label {
+  width: 3rem;
+  height: 3rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.gallery-item--video:hover .overlay-label {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.1);
+}
+
 /* =============================================
    Lightbox Modal
    ============================================= */
@@ -407,7 +433,8 @@ nav a.active {
   to   { opacity: 1; transform: scale(1); }
 }
 
-.lightbox-content img {
+.lightbox-content img,
+.lightbox-content .lightbox-video {
   width: 100%;
   height: auto;
   max-height: 80vh;

@@ -51,20 +51,47 @@
 
   const items = Array.from(document.querySelectorAll('.gallery-item'));
   let currentIndex = 0;
+  let activeVideo = null;
+
+  function removeActiveVideo() {
+    if (activeVideo) {
+      activeVideo.pause();
+      activeVideo.remove();
+      activeVideo = null;
+      lbImg.style.display = '';
+    }
+  }
 
   function openLightbox(index) {
     currentIndex = index;
     const item = items[currentIndex];
-    const img = item.querySelector('img');
     const label = item.querySelector('.overlay-label');
-    lbImg.src = img.dataset.full || img.src;
-    lbImg.alt = img.alt;
+    const videoSrc = item.dataset.video;
+
+    removeActiveVideo();
+
+    if (videoSrc) {
+      lbImg.style.display = 'none';
+      activeVideo = document.createElement('video');
+      activeVideo.src = videoSrc;
+      activeVideo.className = 'lightbox-video';
+      activeVideo.controls = true;
+      activeVideo.autoplay = true;
+      activeVideo.muted = false;
+      lbImg.insertAdjacentElement('afterend', activeVideo);
+    } else {
+      const img = item.querySelector('img');
+      lbImg.src = img.dataset.full || img.src;
+      lbImg.alt = img.alt;
+    }
+
     lbCaption.textContent = label ? label.textContent : '';
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
+    removeActiveVideo();
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
     lbImg.src = '';
