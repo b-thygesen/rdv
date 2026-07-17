@@ -247,15 +247,23 @@
       return e;
     }
 
+    // Ensure defs element exists for arc paths
+    const defs = svg.querySelector('defs') || svg.insertBefore(el('defs', {}), svg.firstChild);
+
     // Month segments
     months.forEach((name, i) => {
-      const a1 = -90 + i * 30, a2 = a1 + 30, mid = a1 + 15;
+      const a1 = -90 + i * 30, a2 = a1 + 30;
       svg.appendChild(el('path', { d: arc(outerR, innerR, a1, a2), fill: segColors[i], stroke:'#fff', 'stroke-width':2 }));
 
-      const lp = polar(labelR, mid);
-      const t = el('text', { x:lp.x, y:lp.y, 'text-anchor':'middle', 'dominant-baseline':'middle',
-        'font-size':'11', 'font-weight':'600', fill:'#2d4a35', 'font-family':'Segoe UI,system-ui,sans-serif' });
-      t.textContent = name;
+      // Curved arc path for textPath label
+      const p1 = polar(labelR, a1), p2 = polar(labelR, a2);
+      const arcId = `month-arc-${i}`;
+      defs.appendChild(el('path', { id: arcId, d: `M${p1.x} ${p1.y} A${labelR} ${labelR} 0 0 1 ${p2.x} ${p2.y}`, fill:'none' }));
+
+      const t = el('text', { 'font-size':'11', 'font-weight':'600', fill:'#2d4a35', 'font-family':'Segoe UI,system-ui,sans-serif' });
+      const tp = el('textPath', { href:`#${arcId}`, startOffset:'50%', 'text-anchor':'middle' });
+      tp.textContent = name;
+      t.appendChild(tp);
       svg.appendChild(t);
     });
 
