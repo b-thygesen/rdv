@@ -1232,7 +1232,7 @@ footer a:hover { color: #ffffff; }
 }
 
 #year-wheel.wheel-spinning {
-  animation: wheel-spin-infinite 18s linear infinite;
+  animation: wheel-spin-infinite 30s linear infinite;
 }
 
 @keyframes wheel-spin-infinite {
