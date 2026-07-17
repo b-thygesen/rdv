@@ -271,7 +271,7 @@
 
     // Month segments
     months.forEach((name, i) => {
-      const a1 = -90 + i * 30, a2 = a1 + 30;
+      const a1 = 90 + i * 30, a2 = a1 + 30;
       svg.appendChild(el('path', { d: arc(outerR, innerR, a1, a2), fill: segColors[i], stroke:'#fff', 'stroke-width':2 }));
 
       // Curved arc path for textPath label
@@ -292,7 +292,7 @@
     // Event dots
     events.forEach((ev, i) => {
       const frac = (ev.day - 1) / monthDays[ev.month - 1];
-      const baseDeg = -90 + (ev.month - 1) * 30 + frac * 30;
+      const baseDeg = 90 + (ev.month - 1) * 30 + frac * 30;
       const finalDeg = baseDeg + (ev.offset || 0);
       const pos = polar(dotR, finalDeg);
 
