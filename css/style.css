@@ -656,6 +656,12 @@ nav a.active {
   overflow: hidden;
   aspect-ratio: 3 / 4;
   background: var(--color-surface);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.person-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .person-photo {
