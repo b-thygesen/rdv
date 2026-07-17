@@ -301,11 +301,11 @@ nav a.active {
    Content Sections
    ============================================= */
 .section {
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
-.section + .section {
-  border-top: 1px solid var(--color-border);
+.section--tinted {
+  background: var(--color-surface);
 }
 
 .section-title {
