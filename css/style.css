@@ -282,19 +282,23 @@ nav a.active {
 
 .btn {
   display: inline-block;
-  background: var(--color-accent);
+  background: transparent;
   color: #fff;
   padding: 0.75rem 2rem;
-  border-radius: var(--radius);
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
   font-weight: 600;
   font-size: 0.95rem;
-  transition: background var(--transition), transform var(--transition);
+  letter-spacing: 0.03em;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
 }
 
 .btn:hover {
-  background: var(--color-accent-dark);
-  color: #fff;
-  transform: translateY(-1px);
+  background: #ffffff;
+  color: var(--color-nav-bg);
+  border-color: #ffffff;
+  color: var(--color-nav-bg);
+  transform: translateY(-2px);
 }
 
 /* =============================================
