@@ -190,8 +190,27 @@
 
     if (stopBtn) {
       stopBtn.addEventListener('click', () => {
+        // Read current rotation from computed transform matrix
+        const matrix = new DOMMatrix(getComputedStyle(wheel).transform);
+        let angle = Math.atan2(matrix.b, matrix.a) * (180 / Math.PI);
+        if (angle < 0) angle += 360;
+
+        // Freeze at current angle, stop infinite spin
+        wheel.style.transform = `rotate(${angle}deg)`;
         wheel.classList.remove('wheel-spinning');
+
+        // Spin to nearest full rotation (forward if < 180, back if > 180)
+        const target = angle <= 180 ? 360 : 0;
+        wheel.getBoundingClientRect(); // force reflow
+
+        wheel.style.transition = 'transform 0.5s ease-out';
+        wheel.style.transform = `rotate(${target}deg)`;
         stopBtn.classList.add('hidden');
+
+        wheel.addEventListener('transitionend', () => {
+          wheel.style.transition = '';
+          wheel.style.transform = '';
+        }, { once: true });
       });
     }
   })();
