@@ -1236,7 +1236,7 @@ footer a:hover { color: #ffffff; }
 }
 
 @keyframes wheel-spin-in {
-  from { transform: rotate(-360deg); opacity: 0; }
+  from { transform: rotate(-720deg); opacity: 0; }
   to   { transform: rotate(0deg);    opacity: 1; }
 }
 
