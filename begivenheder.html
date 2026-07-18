@@ -71,6 +71,18 @@
 
           <div class="timeline-item" data-aos="fade-left" data-aos-delay="0">
             <div class="timeline-dot"></div>
+            <div class="timeline-date">1. august</div>
+            <a href="begivenhed-roemo-havnefest.html" class="timeline-card">
+              <img src="Billeder/rømø/havnefest.jpg" alt="Rømø havnefest" class="timeline-card-img" loading="lazy" />
+              <div class="timeline-card-body">
+                <h3>Rømø havnefest</h3>
+                <p>Foreningen deltager til Rømø havnefest.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-left" data-aos-delay="0">
+            <div class="timeline-dot"></div>
             <div class="timeline-date">21. juli</div>
             <a href="begivenhed-uhrbrand-holst-soegaard.html" class="timeline-card">
               <img src="Billeder/rømø/uhrbrand.jpg" alt="Uhrbrand, Holst & Søgaard" class="timeline-card-img" loading="lazy" />
@@ -211,8 +223,8 @@
         wheel.style.transform = `rotate(${angle}deg)`;
         wheel.classList.remove('wheel-spinning');
 
-        // Spin to nearest full rotation (forward if < 180, back if > 180)
-        const target = angle <= 180 ? 360 : 0;
+        // Spin to nearest full rotation (back if <= 180°, forward if > 180°)
+        const target = angle <= 180 ? 0 : 360;
         wheel.getBoundingClientRect(); // force reflow
 
         wheel.style.transition = 'transform 0.5s ease-out';
@@ -260,6 +272,7 @@
       { month:7,  day:12, title:'Fanødag',                   subtitle:'Morgenkaffe, kirke, sømandens ankomst og dragtfremvisning på Fanø.',        date:'12. juli 2026',  href:'begivenhed-fanoedag.html',    offset: -6, img:'Billeder/rømø/fanødag.jpg' },
       { month:7,  day:15, title:'Klægager',                  subtitle:'Onsdagsmenu med besøg af Rømødragtens Venner på Den Gamle Digegreves Gård.',date:'15. juli 2026',  href:'begivenhed-klaegager.html',   offset: 2, img:'Billeder/rømø/klægager.webp' },
       { month:7,  day:21, title:'Uhrbrand, Holst & Søgaard', subtitle:'Oplev Uhrbrand, Holst & Søgaard på Rømø.',                                    date:'21. juli 2026', href:'begivenhed-uhrbrand-holst-soegaard.html', offset: 6, img:'Billeder/rømø/uhrbrand.jpg' },
+      { month:8,  day:1,  title:'Rømø havnefest',             subtitle:'Foreningen deltager til Rømø havnefest.',                                       date:'1. august 2026', href:'begivenhed-roemo-havnefest.html', img:'Billeder/rømø/havnefest.jpg' },
     ];
 
     function rad(deg) { return deg * Math.PI / 180; }
